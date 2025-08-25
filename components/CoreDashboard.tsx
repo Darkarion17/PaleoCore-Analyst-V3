@@ -346,7 +346,7 @@ const CoreDashboard: React.FC<CoreDashboardProps> = ({ core, microfossils, proxy
                     <div className="flex-1">
                         <label htmlFor="section-select" className="block text-xs font-medium text-content-muted mb-1">Select Section</label>
                         <select id="section-select" value={selectedSection?.id || ''} onChange={(e) => { const section = filteredSections.find(s => s.id === e.target.value); if (section) setSelectedSection(section); }} className={selectClass} style={{ backgroundImage: selectIcon, backgroundPosition: 'right 0.5rem center', backgroundSize: '1.5em 1.5em' }} disabled={filteredSections.length === 0}>
-                            {filteredSections.length === 0 ? (<option>No matching sections</option>) : (filteredSections.map(section => (<option key={section.id} value={section.id}>{section.name}</option>))}
+                            {filteredSections.length === 0 ? (<option>No matching sections</option>) : filteredSections.map(section => (<option key={section.id} value={section.id}>{section.name}</option>))}
                         </select>
                     </div>
                     <div className="self-end">
